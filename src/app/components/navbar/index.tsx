@@ -4,6 +4,8 @@ import tw from "twin.macro";
 import { Logo } from "../logo";
 import { NavItems } from "./NavItems";
 import { Slide as Menu } from "react-burger-menu";
+import { useMediaQuery } from "react-responsive";
+import { SCREENS } from "../responsive";
 
 const NavBarContainer = styled.div`
   min-height: 68px;
@@ -22,6 +24,21 @@ const NavBarContainer = styled.div`
 const LogoContainer = styled.div``;
 
 export function Navbar() {
+  const isMobile = useMediaQuery({ maxWidth: SCREENS.sm });
+
+  if (isMobile) {
+    return (
+      <Menu>
+        <NavBarContainer>
+          <LogoContainer>
+            <Logo />
+          </LogoContainer>
+          <NavItems />
+        </NavBarContainer>
+      </Menu>
+    );
+  }
+
   return (
     <NavBarContainer>
       <LogoContainer>

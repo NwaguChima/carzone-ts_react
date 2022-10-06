@@ -10,7 +10,6 @@ import menuStyles from "./menuStyles";
 const ListContainer = styled.ul`
   ${tw`
     flex
-    flex-col
     list-none
   `};
 `;

@@ -1,3 +1,9 @@
+import {
+  faCalendarAlt,
+  faCarSide,
+  faMapMarkedAlt,
+} from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import React from "react";
 import styled from "styled-components";
 import tw from "twin.macro";
@@ -17,8 +23,8 @@ const Container = styled.div`
 
 const Title = styled.h2`
   ${tw`
-        text-xl
-        lg:text-3xl
+        text-3xl
+        lg:text-5xl
         text-black
         font-extrabold
     `}
@@ -39,15 +45,16 @@ const StepContainer = styled.div`
   ${tw`
         flex
         flex-col
-        w-16
         md:w-96
         items-center
         transition-colors
         hover:text-red-500
+        m-3
     `}
 `;
 
 const Step = styled.div`
+  box-shadow: 0 1.3px 12px -3px rgba(0, 0, 0, 0.4);
   ${tw`
         flex
         rounded-lg
@@ -83,4 +90,49 @@ const StepIcon = styled.span`
     `}
 `;
 
-export function BookingSteps() {}
+export function BookingSteps() {
+  return (
+    <Container>
+      <Title>Our Working Steps</Title>
+      <StepsContainer>
+        <StepContainer>
+          <Step>
+            <StepIcon>
+              <FontAwesomeIcon icon={faMapMarkedAlt} />
+            </StepIcon>
+          </Step>
+          <StepTitle>Choose Location</StepTitle>
+          <StepDescription>
+            Find the nearest carzone point and book your car.
+          </StepDescription>
+        </StepContainer>
+
+        <StepContainer>
+          <Step>
+            <StepIcon>
+              <FontAwesomeIcon icon={faCalendarAlt} />
+            </StepIcon>
+          </Step>
+          <StepTitle>Pick-Up Date</StepTitle>
+          <StepDescription>
+            Pick the date you are planning to rent the car and book it for as
+            long as you like.
+          </StepDescription>
+        </StepContainer>
+
+        <StepContainer>
+          <Step>
+            <StepIcon>
+              <FontAwesomeIcon icon={faCarSide} />
+            </StepIcon>
+          </Step>
+          <StepTitle>Book Your Car</StepTitle>
+          <StepDescription>
+            Book your car in three easy steps. You can pay at the counter when
+            you pick up your car.
+          </StepDescription>
+        </StepContainer>
+      </StepsContainer>
+    </Container>
+  );
+}

@@ -53,6 +53,7 @@ const Name = styled.span`
         text-gray-400
         text-xs
         md:text-sm
+        cursor-pointer
     `}
 `;
 
@@ -76,21 +77,41 @@ const DateCalendar = styled(Calendar)`
 `;
 
 export function BookCard() {
+  const [startDate, setStartDate] = useState<Date>(new Date());
+  const [isStartCalendarOpen, setStartCalendarOpen] = useState(false);
+  const [returnDate, setReturnDate] = useState(new Date());
+  const [isReturnCalendarOpen, setReturnCalendarOpen] = useState(false);
+
+  const toggleStartDateCalendar = () => {
+    setStartCalendarOpen(!isStartCalendarOpen);
+    if (isReturnCalendarOpen) setReturnCalendarOpen(false);
+  };
+
+  const toggleReturnDateCalendar = () => {
+    setReturnCalendarOpen(!isReturnCalendarOpen);
+    if (isStartCalendarOpen) setStartCalendarOpen(false);
+  };
+
   return (
     <CardContainer>
       <ItemContainer>
         <Icon>
           <FontAwesomeIcon icon={faCalendarAlt} />
         </Icon>
-        <Name>Pick Up Date</Name>
-        <DateCalendar />
+        <Name onClick={toggleStartDateCalendar}>Pick Up Date</Name>
+        {isStartCalendarOpen && (
+          <DateCalendar value={startDate} onChange={setStartDate} />
+        )}
       </ItemContainer>
       <LineSeparator />
       <ItemContainer>
         <Icon>
           <FontAwesomeIcon icon={faCalendarAlt} />
         </Icon>
-        <Name>Return Date</Name>
+        <Name onClick={toggleReturnDateCalendar}>Return Date</Name>
+        {isReturnCalendarOpen && (
+          <DateCalendar value={returnDate} onChange={setReturnDate} />
+        )}
       </ItemContainer>
       <Marginer direction="horizontal" margin="2em" />
       <Button text="Book Your Ride" />

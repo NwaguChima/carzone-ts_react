@@ -44,4 +44,36 @@ const CarContainer = styled.div`
   }
 `;
 
+const InfoContainer = styled.div`
+  ${tw`
+        w-1/2
+        flex
+        flex-col
+        md:ml-6
+        2xl:ml-16
+    `}
+`;
+
+const Title = styled.h1`
+  ${tw`
+        text-black
+        text-2xl
+        md:text-5xl
+        font-extrabold
+        md:font-black
+        md:leading-normal
+`}
+`;
+
+const InfoText = styled.p`
+  ${tw`
+        max-w-2xl
+        text-gray-500
+        text-sm
+        md:text-base
+        font-normal
+        mt-4
+    `}
+`;
+
 export function AboutUs() {}

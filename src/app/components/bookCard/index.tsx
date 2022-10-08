@@ -1,7 +1,9 @@
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import React from "react";
+import { faCalendarAlt } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import styled from "styled-components";
 import tw from "twin.macro";
+import { Button } from "../button";
 
 const CardContainer = styled.div`
   ${tw`
@@ -63,9 +65,19 @@ export function BookCard() {
     <CardContainer>
       <ItemContainer>
         <Icon>
-          <FontAwesomeIcon icon={["fas", "map-marker-alt"]} />
+          <FontAwesomeIcon icon={faCalendarAlt} />
         </Icon>
+        <Name>Pick Up Date</Name>
       </ItemContainer>
+      <LineSeparator />
+      <ItemContainer>
+        <Icon>
+          <FontAwesomeIcon icon={faCalendarAlt} />
+        </Icon>
+        <Name>Return Date</Name>
+      </ItemContainer>
+      <Marginer direction="horizontal" margin="2em" />
+      <Button text="Book Your Ride" />
     </CardContainer>
   );
 }

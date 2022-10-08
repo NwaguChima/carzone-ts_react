@@ -8,7 +8,6 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import styled, { css } from "styled-components";
 import tw from "twin.macro";
 import { Button } from "../button";
-import { Marginer } from "../marginer";
 
 import Calendar from "react-calendar";
 import "react-calendar/dist/Calendar.css";

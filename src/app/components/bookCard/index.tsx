@@ -1,3 +1,4 @@
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import React from "react";
 import styled from "styled-components";
 import tw from "twin.macro";
@@ -45,4 +46,26 @@ const Name = styled.span`
     `}
 `;
 
-export function BookCard() {}
+const LineSeparator = styled.span`
+  width: 2px;
+  height: 45%;
+  ${tw`
+        bg-gray-300
+        mr-2
+        ml-2
+        md:mr-5
+        md:ml-5
+    `}
+`;
+
+export function BookCard() {
+  return (
+    <CardContainer>
+      <ItemContainer>
+        <Icon>
+          <FontAwesomeIcon icon={["fas", "map-marker-alt"]} />
+        </Icon>
+      </ItemContainer>
+    </CardContainer>
+  );
+}

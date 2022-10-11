@@ -1,4 +1,3 @@
-import React from "react";
 import styled from "styled-components";
 import tw from "twin.macro";
 import { HomePage } from "./app/containers/Homepage";

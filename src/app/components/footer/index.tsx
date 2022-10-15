@@ -1,3 +1,5 @@
+import { faEnvelope, faPhoneAlt } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import React from "react";
 import styled from "styled-components";
 import tw from "twin.macro";
@@ -90,6 +92,35 @@ const HeaderTitle = styled.h3`
     `}
 `;
 
+const HorizontalContainer = styled.div`
+  ${tw`
+        flex
+        items-center
+    `}
+`;
+
+const RedIcon = styled.span`
+  ${tw`
+        w-8
+        h-8
+        rounded-full
+        bg-red-500
+        flex
+        items-center
+        justify-center
+        text-white
+        text-base
+        mr-2
+    `}
+`;
+
+const SmallText = styled.h6`
+  ${tw`
+        text-white
+        text-sm
+    `}
+`;
+
 export function Footer() {
   return (
     <FooterContainer>
@@ -142,6 +173,24 @@ export function Footer() {
               <a href="#">Terms &amp; Conditions</a>
             </ListItem>
           </LinksList>
+        </SectionContainer>
+        <SectionContainer>
+          <HeaderTitle>Call Now</HeaderTitle>
+          <HorizontalContainer>
+            <RedIcon>
+              <FontAwesomeIcon icon={faPhoneAlt} />
+            </RedIcon>
+            <SmallText>+1 234 56 78</SmallText>
+          </HorizontalContainer>
+        </SectionContainer>
+        <SectionContainer>
+          <HeaderTitle>Mail</HeaderTitle>
+          <HorizontalContainer>
+            <RedIcon>
+              <FontAwesomeIcon icon={faEnvelope} />
+            </RedIcon>
+            <SmallText>chimanwagu48@gmail.com</SmallText>
+          </HorizontalContainer>
         </SectionContainer>
       </InnerContainer>
     </FooterContainer>

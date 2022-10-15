@@ -56,6 +56,15 @@ const PricesContainer = styled.div`
 `}
 `;
 
+const SmallText = styled.p`
+  color: inherit;
+
+  ${tw`
+        text-xs
+        font-thin
+    `}
+`;
+
 const DailyPrice = styled.h5`
   ${tw`
         text-red-500
@@ -122,4 +131,36 @@ const RentButton = styled(Button)`
 `}
 `;
 
-export function Car(props: ICarProps) {}
+export function Car(props: ICarProps) {
+  const {
+    name,
+    thumbnailSrc,
+    dailyPrice,
+    monthlyPrice,
+    mileage,
+    gearType,
+    gas,
+  } = props;
+
+  return (
+    <CarContainer>
+      <CarThumbnail>
+        <img src={thumbnailSrc} />
+      </CarThumbnail>
+      <CarName>{name}</CarName>
+      <PricesContainer>
+        <DailyPrice>
+          ${dailyPrice}
+          <SmallText>/day</SmallText>
+        </DailyPrice>
+        <MonthlyPrice>
+          ${monthlyPrice}
+          <SmallText>/month</SmallText>
+        </MonthlyPrice>
+      </PricesContainer>
+      <Seperator />
+      <CarDetailsContainer></CarDetailsContainer>
+      <RentButton text="Rent Now" />
+    </CarContainer>
+  );
+}

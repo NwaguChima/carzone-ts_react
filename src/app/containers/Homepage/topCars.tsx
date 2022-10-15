@@ -1,6 +1,8 @@
 import React from "react";
 import styled from "styled-components";
 import tw from "twin.macro";
+import { ICar } from "../../../typings/car";
+import { Car } from "../../components/car";
 
 const TopCarsContainern = styled.div`
   ${tw`
@@ -40,10 +42,25 @@ const CarsContainer = styled.div`
 `;
 
 export function TopCars() {
+  const testCar3: ICar = {
+    name: "Audi S3 Car",
+    mileage: "10k",
+    thumbnailSrc:
+      "https://cdn.jdpower.com/Models/640x480/2017-Audi-S3-PremiumPlus.jpg",
+    dailyPrice: 70,
+    monthlyPrice: 1600,
+    gearType: "Auto",
+    gas: "Petrol",
+  };
+
   return (
     <TopCarsContainern>
       <Title>Explore Our Top Deals</Title>
-      <CarsContainer>{/* <CarContainer /> */}</CarsContainer>
+      <CarsContainer>
+        <Car {...testCar3} />
+        <Car {...testCar3} />
+        <Car {...testCar3} />
+      </CarsContainer>
     </TopCarsContainern>
   );
 }

@@ -31,6 +31,8 @@ const AboutContainer = styled.div`
   ${tw`
         flex
         flex-col    
+        mr-2
+        md:mr-12
     `}
 `;
 
@@ -42,6 +44,16 @@ const AboutText = styled.p`
         max-w-xs
         leading-5
         mt-2
+    `}
+`;
+
+const SectionContainer = styled.div`
+  ${tw`
+        flex
+        flex-col
+        mr-2
+        md:mr-12
+
     `}
 `;
 
@@ -70,7 +82,7 @@ const ListItem = styled.li`
 const HeaderTitle = styled.h3`
   ${tw`
         font-bold
-        text-base
+        text-2xl
         text-white
         mb-3
     `}
@@ -89,6 +101,26 @@ export function Footer() {
             marketplace for buying and selling cars in the Middle East.
           </AboutText>
         </AboutContainer>
+        <SectionContainer>
+          <HeaderTitle>Our Links</HeaderTitle>
+          <LinksList>
+            <ListItem>
+              <a href="#">Home</a>
+            </ListItem>
+            <ListItem>
+              <a href="#">About Us</a>
+            </ListItem>
+            <ListItem>
+              <a href="#">Services</a>
+            </ListItem>
+            <ListItem>
+              <a href="#">Models</a>
+            </ListItem>
+            <ListItem>
+              <a href="#">Blog</a>
+            </ListItem>
+          </LinksList>
+        </SectionContainer>
       </InnerContainer>
     </FooterContainer>
   );

@@ -1,3 +1,9 @@
+import {
+  faEllipsisH,
+  faFillDrip,
+  faTachometerAlt,
+} from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import React from "react";
 import styled from "styled-components";
 import tw from "twin.macro";
@@ -151,15 +157,34 @@ export function Car(props: ICarProps) {
       <PricesContainer>
         <DailyPrice>
           ${dailyPrice}
-          <SmallText>/day</SmallText>
+          <SmallText>/Day</SmallText>
         </DailyPrice>
         <MonthlyPrice>
           ${monthlyPrice}
-          <SmallText>/month</SmallText>
+          <SmallText>/Month</SmallText>
         </MonthlyPrice>
       </PricesContainer>
       <Seperator />
-      <CarDetailsContainer></CarDetailsContainer>
+      <CarDetailsContainer>
+        <CarDetail>
+          <SmallIcon>
+            <FontAwesomeIcon icon={faTachometerAlt} />
+          </SmallIcon>
+          <CarInfo>{mileage}</CarInfo>
+        </CarDetail>
+        <CarDetail>
+          <SmallIcon>
+            <FontAwesomeIcon icon={faEllipsisH} />
+          </SmallIcon>
+          <CarInfo>{gearType}</CarInfo>
+        </CarDetail>
+        <CarDetail>
+          <SmallIcon>
+            <FontAwesomeIcon icon={faFillDrip} />
+          </SmallIcon>
+          <CarInfo>{gas}</CarInfo>
+        </CarDetail>
+      </CarDetailsContainer>
       <RentButton text="Rent Now" />
     </CarContainer>
   );

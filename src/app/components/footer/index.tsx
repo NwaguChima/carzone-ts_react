@@ -5,8 +5,8 @@ import styled from "styled-components";
 import tw from "twin.macro";
 import { Logo } from "../logo";
 
-const FooterContainer = styled.div`
-  /* min-height: 24em; */
+const FooterContainer = styled.footer`
+  //min-height: 24em;
   background-color: #1d2124;
   ${tw`
     flex
@@ -26,112 +26,130 @@ const InnerContainer = styled.div`
     h-full
     max-w-screen-2xl
     flex-wrap
+    pl-1
+    justify-center
   `};
+`;
+
+const BottomContainer = styled.div`
+  ${tw`
+    w-full
+    flex
+    max-w-screen-2xl
+    justify-center
+    mt-7
+    md:mt-5
+    pb-5
+  `};
+`;
+
+const CopyrightText = styled.small`
+  font-size: 12px;
+  ${tw`
+    text-gray-300
+  `}
 `;
 
 const AboutContainer = styled.div`
   ${tw`
-        flex
-        flex-col    
-        mr-2
-        md:mr-16
-        pl-10
-        pr-10
-        md:pl-3
-        md:pr-3
-
-    `}
+    flex
+    flex-col
+    mr-2
+    md:mr-16
+    pl-10
+    pr-10
+    md:pl-3
+    md:pr-3
+  `};
 `;
 
 const AboutText = styled.p`
   ${tw`
-        text-white
-        text-sm
-        font-normal
-        max-w-xs
-        leading-5
-        mt-2
-    `}
+    text-white
+    text-sm
+    font-normal
+    max-w-xs
+    leading-5
+    mt-2
+  `};
 `;
 
 const SectionContainer = styled.div`
   ${tw`
-  w-full
-  md:w-auto
-        flex
-        flex-col
-        mr-2
-        md:mr-16
-        pl-10
-        pr-10
-        md:pl-3
-        md:pr-3
-        mt-7
-        md:mt-0
-
-    `}
+    w-full
+    md:w-auto
+    flex
+    flex-col
+    mr-2
+    md:mr-16
+    pl-10
+    pr-10
+    md:pl-3
+    md:pr-3
+    mt-7
+    md:mt-0
+  `};
 `;
 
 const LinksList = styled.ul`
   ${tw`
-        outline-none
-        list-none
-        flex
-        flex-col
-    `}
+    outline-none
+    list-none
+    flex
+    flex-col
+  `};
 `;
 
 const ListItem = styled.li`
   ${tw`
-        mb-3
-    `}
-
+    mb-3
+  `};
   & > a {
     ${tw`
-        text-xs
-        text-white
-        hover:text-gray-300
-        transition-all
-    `}
+      text-sm
+    text-white
+      transition-all
+      hover:text-gray-200
+    `};
   }
 `;
 
 const HeaderTitle = styled.h3`
   ${tw`
-        font-bold
-        text-2xl
-        text-white
-        mb-3
-    `}
+    text-2xl
+    font-bold
+    text-white
+    mb-3
+  `};
 `;
 
 const HorizontalContainer = styled.div`
   ${tw`
-        flex
-        items-center
-    `}
+    flex
+    items-center
+  `};
 `;
 
 const RedIcon = styled.span`
   ${tw`
-        w-8
-        h-8
-        rounded-full
-        bg-red-500
-        flex
-        items-center
-        justify-center
-        text-white
-        text-base
-        mr-2
-    `}
+    w-9
+    h-9
+    rounded-full
+    bg-red-500
+    flex
+    items-center
+    justify-center
+    text-white
+    text-base
+    mr-2
+  `};
 `;
 
 const SmallText = styled.h6`
   ${tw`
-        text-white
-        text-sm
-    `}
+    text-sm
+    text-white
+  `};
 `;
 
 export function Footer() {
@@ -141,10 +159,9 @@ export function Footer() {
         <AboutContainer>
           <Logo color="white" bgColor="dark" />
           <AboutText>
-            Carzone is the largest online car marketplace in the Middle East,
-            connecting buyers and sellers with a wide variety of new and used
-            cars. With over 1 million cars listed, YourCar is the largest online
-            marketplace for buying and selling cars in the Middle East.
+            Carzone is a Car renting and selling company located in many
+            countries across the world which has high quality cars and top rated
+            service.
           </AboutText>
         </AboutContainer>
         <SectionContainer>
@@ -193,7 +210,7 @@ export function Footer() {
             <RedIcon>
               <FontAwesomeIcon icon={faPhoneAlt} />
             </RedIcon>
-            <SmallText>+1 234 56 78</SmallText>
+            <SmallText>+91 555-234-8469</SmallText>
           </HorizontalContainer>
         </SectionContainer>
         <SectionContainer>
@@ -202,10 +219,16 @@ export function Footer() {
             <RedIcon>
               <FontAwesomeIcon icon={faEnvelope} />
             </RedIcon>
-            <SmallText>chimanwagu48@gmail.com</SmallText>
+            <SmallText>nwaguchima48@gmail.com</SmallText>
           </HorizontalContainer>
         </SectionContainer>
       </InnerContainer>
+      <BottomContainer>
+        <CopyrightText>
+          Copyright &copy; {new Date().getFullYear()} CarZone. All rights
+          reserved.
+        </CopyrightText>
+      </BottomContainer>
     </FooterContainer>
   );
 }

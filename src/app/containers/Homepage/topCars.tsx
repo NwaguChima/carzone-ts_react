@@ -27,4 +27,25 @@ const Title = styled.h2`
     `}
 `;
 
-export function TopCars() {}
+const CarsContainer = styled.div`
+  ${tw`
+        w-full
+        flex
+        flex-wrap
+        justify-center
+        mt-7
+        md:mt-10
+
+    `}
+`;
+
+export function TopCars() {
+  return (
+    <TopCarsContainern>
+      <Title>Explore Our Top Deals</Title>
+      <CarsContainer>
+        <CarContainer />
+      </CarsContainer>
+    </TopCarsContainern>
+  );
+}

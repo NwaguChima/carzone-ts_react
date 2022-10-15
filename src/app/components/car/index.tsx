@@ -25,6 +25,67 @@ const CarContainer = styled.div`
 `}
 `;
 
-const CarThumbnail = styled.div``;
+const CarThumbnail = styled.div`
+  width: 100%;
+  height: auto;
+
+  img {
+    width: 100%;
+    height: 100%;
+  }
+`;
+
+const CarName = styled.h3`
+  ${tw`
+        text-base
+        font-bold
+        text-black
+        mt-1
+        mb-1
+    `}
+`;
+
+const PricesContainer = styled.div`
+  ${tw`
+        w-full
+        flex
+        justify-start
+        mt-3
+
+`}
+`;
+
+const DailyPrice = styled.h5`
+  ${tw`
+        text-red-500
+        font-bold
+        text-sm
+        mr-3
+    `}
+`;
+
+const MonthlyPrice = styled.h5`
+  ${tw`
+        text-gray-500
+        font-bold
+        text-sm
+    `}
+`;
+
+const SmallIcon = styled.h6`
+  ${tw`
+        text-gray-400
+        text-sm
+        mr-1
+    `}
+`;
+
+const CarDetailsContainer = styled.div`
+  ${tw`
+        flex
+        w-full
+        justify-between
+    `}
+`;
 
 export function Car(props: ICarProps) {}

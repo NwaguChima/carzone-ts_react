@@ -6,7 +6,7 @@ import tw from "twin.macro";
 import { Logo } from "../logo";
 
 const FooterContainer = styled.div`
-  min-height: 24em;
+  /* min-height: 24em; */
   background-color: #1d2124;
   ${tw`
     flex
@@ -35,6 +35,11 @@ const AboutContainer = styled.div`
         flex-col    
         mr-2
         md:mr-16
+        pl-10
+        pr-10
+        md:pl-3
+        md:pr-3
+
     `}
 `;
 
@@ -51,10 +56,18 @@ const AboutText = styled.p`
 
 const SectionContainer = styled.div`
   ${tw`
+  w-full
+  md:w-auto
         flex
         flex-col
         mr-2
         md:mr-16
+        pl-10
+        pr-10
+        md:pl-3
+        md:pr-3
+        mt-7
+        md:mt-0
 
     `}
 `;

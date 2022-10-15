@@ -45,6 +45,37 @@ const AboutText = styled.p`
     `}
 `;
 
+const LinksList = styled.ul`
+  ${tw`
+        outline-none
+        list-none
+        flex
+        flex-col
+    `}
+`;
+
+const ListItem = styled.li`
+  ${tw`
+        mb-3
+    `}
+
+  & > a {
+    ${tw`
+        text-sm
+        text-white
+    `}
+  }
+`;
+
+const HeaderTitle = styled.h3`
+  ${tw`
+        font-bold
+        text-base
+        text-white
+        mb-3
+    `}
+`;
+
 export function Footer() {
   return (
     <FooterContainer>

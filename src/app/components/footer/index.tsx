@@ -32,7 +32,7 @@ const AboutContainer = styled.div`
         flex
         flex-col    
         mr-2
-        md:mr-12
+        md:mr-16
     `}
 `;
 
@@ -52,7 +52,7 @@ const SectionContainer = styled.div`
         flex
         flex-col
         mr-2
-        md:mr-12
+        md:mr-16
 
     `}
 `;
@@ -73,8 +73,10 @@ const ListItem = styled.li`
 
   & > a {
     ${tw`
-        text-sm
+        text-xs
         text-white
+        hover:text-gray-300
+        transition-all
     `}
   }
 `;
@@ -118,6 +120,26 @@ export function Footer() {
             </ListItem>
             <ListItem>
               <a href="#">Blog</a>
+            </ListItem>
+          </LinksList>
+        </SectionContainer>
+        <SectionContainer>
+          <HeaderTitle>Other Links</HeaderTitle>
+          <LinksList>
+            <ListItem>
+              <a href="#">FAQ</a>
+            </ListItem>
+            <ListItem>
+              <a href="#">Contact Us</a>
+            </ListItem>
+            <ListItem>
+              <a href="#">Support</a>
+            </ListItem>
+            <ListItem>
+              <a href="#">Privacy Policy</a>
+            </ListItem>
+            <ListItem>
+              <a href="#">Terms &amp; Conditions</a>
             </ListItem>
           </LinksList>
         </SectionContainer>

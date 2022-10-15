@@ -43,9 +43,7 @@ export function TopCars() {
   return (
     <TopCarsContainern>
       <Title>Explore Our Top Deals</Title>
-      <CarsContainer>
-        <CarContainer />
-      </CarsContainer>
+      <CarsContainer>{/* <CarContainer /> */}</CarsContainer>
     </TopCarsContainern>
   );
 }
